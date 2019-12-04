@@ -1,70 +1,60 @@
 import React, { Component } from 'react';
 import Konva from 'konva';
-import { Stage, Layer, Star, Text } from 'react-konva';
+import { Stage, Group, Layer, Rect, Line } from 'react-konva';
 
 export default class CanvasContainer extends Component {
-  handleDragStart = e => {
-    e.target.setAttrs({
-      shadowOffset: {
-        x: 15,
-        y: 15
-      },
-      scaleX: 1.1,
-      scaleY: 1.1
-    });
-  };
-  handleDragEnd = e => {
-    e.target.to({
-      duration: 0.5,
-      easing: Konva.Easings.ElasticEaseOut,
-      scaleX: 1,
-      scaleY: 1,
-      shadowOffsetX: 5,
-      shadowOffsetY: 5
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state={
+      mStart: {x: 0, y:0 },
+      arr: [],
+    }
+  }
 
-  //   stage = new Konva.Stage({
-      
-  //   })
-  //   pentagon = new Konva.RegularPolygon({
-  //   x: stage.width() / 2,
-  //   y: stage.height() / 2,
-  //   sides: 5,
-  //   radius: 70,
-  //   fill: 'red',
-  //   stroke: 'black',
-  //   strokeWidth: 4,
-  //   shadowOffsetX: 20,
-  //   shadowOffsetY: 25,
-  //   shadowBlur: 40,
-  //   opacity: 0.5
-  // });
+  handleMouseUp = e => {
+    console.log(e)
+    //switch for props.curTool
+    if (this.props.curTool !== 'ARROW') {
+      switch(this.props.curTool) {
+        case 'RECT':
+          this.setState({
+          arr: [...this.state.arr, (<Group draggable><Rect
+          key={this.state.arr.length}
+            x={this.state.mStart.x}
+            y={this.state.mStart.y}
+            width={Math.abs(e.evt.clientX - this.state.mStart.x)}
+            height={Math.abs(e.evt.clientY - this.state.mStart.y - this.props.tbh)}
+            stroke='black'
+            draggable
+          /></Group>)]});
+          break;
+        case 'LINE':        
+              this.setState({
+              arr: [...this.state.arr, (<Line
+                key={this.state.arr.length} 
+                points={[this.state.mStart.x,this.state.mStart.y,e.evt.clientX, e.evt.clientY - this.props.tbh]}
+                stroke='black'            
+                />)]});
+          break;
+        default:
+          break;
+      }}
+   };
+
+  handleMouseDown = e => {
+    if (this.props.curTool !== 'ARROW') {
+      e.target.stopDrag();
+    }
+    this.setState({
+      mStart: {x: e.evt.clientX, y:e.evt.clientY - this.props.tbh}
+    })
+  };
 
   render() {
     return (
-        <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Stage width={window.innerWidth} height={window.innerHeight} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
           <Layer>
-            <Text text="Try to drag a star" />
-            {[...Array(10)].map((_, i) => (
-              <Star
-                key={i}
-                x={Math.random() * window.innerWidth}
-                y={Math.random() * window.innerHeight}
-                numPoints={5}
-                innerRadius={20}
-                outerRadius={40}
-                fill="#89b717"
-                opacity={0.8}
-                draggable
-                rotation={Math.random() * 180}
-                shadowColor="black"
-                shadowBlur={10}
-                shadowOpacity={0.6}
-                onDragStart={this.handleDragStart}
-                onDragEnd={this.handleDragEnd}
-              />
-            ))}
+            {this.state.arr}
           </Layer>
         </Stage>
     );

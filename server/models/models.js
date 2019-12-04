@@ -28,7 +28,7 @@ password: {type: String, required: true}
 const User = mongoose.model('users', userSchema);
 
 const userTemplateSchema = new Schema({
-userId: {type: Schema.Types.ObjectId, ref: 'users'},
+userId: {type: String, required: true},
 arrayOfTemplates: {type: String}
 });
 
