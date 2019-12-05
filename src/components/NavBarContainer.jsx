@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import LoginContainer from "./LoginContainer.jsx";
+import SignupContainer from "./SignupContainer.jsx";
+import NavBar from "./NavBar";
 
-export default class NavBar extends Component {
+export default class NavBarContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { thingToDisplay: "navbar" };
@@ -21,15 +24,13 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        
-        <ul>
-          <li>
-            <button onClick={this.logLogInClick}>Log In</button>
-          </li>
-          <li>
-            <button onClick={this.logSignUpClick}>Sign Up</button>
-          </li>
-        </ul>
+        <NavBar
+          logLogInClick={this.logLogInClick}
+          logSignUpClick={this.logSignUpClick}
+        />
+
+        <LoginContainer />
+        <SignupContainer />
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class SignupContainer extends Component {
+export default class SignupContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -52,28 +52,28 @@ class SignupContainer extends Component {
       .catch(err => console.log("Failed to fetch", err));
   }
 
-  //on firstName feild change upstate state
-  onFeildfnChange(e) {
+  //on firstName Field change upstate state
+  onFieldfnChange(e) {
     this.setState({
       firstName: e.target.value
     });
   }
-  //on lastName feild change upstate state
-  onFeildlastNameChange(e) {
+  //on lastName Field change upstate state
+  onFieldlastNameChange(e) {
     this.setState({
       lastName: e.target.value
     });
   }
 
-  //on user feild change upstate state
-  onFeildusrChange(e) {
+  //on user Field change upstate state
+  onFieldusrChange(e) {
     this.setState({
       email: e.target.value
     });
   }
 
-  //on psd feild change upstate state
-  onFeildpsdChange(e) {
+  //on psd Field change upstate state
+  onFieldpsdChange(e) {
     this.setState({
       password: e.target.value
     });
@@ -95,9 +95,9 @@ class SignupContainer extends Component {
               type="text"
               value={this.state.firstName}
               onChange={e => {
-                this.onFeildfnChange(e);
+                this.onFieldfnChange(e);
               }}
-              Name="firstNameName"
+              name="firstName"
             />
           </label>
           <br />
@@ -107,9 +107,9 @@ class SignupContainer extends Component {
               type="text"
               value={this.state.lastName}
               onChange={e => {
-                this.onFeildlastNameChange(e);
+                this.onFieldlastNameChange(e);
               }}
-              Name="lastName"
+              name="lastName"
             />
           </label>
           <br />
@@ -119,9 +119,9 @@ class SignupContainer extends Component {
               type="text"
               value={this.state.email}
               onChange={e => {
-                this.onFeildusrChange(e);
+                this.onFieldusrChange(e);
               }}
-              Name="email"
+              name="email"
             />
           </label>
           <br />
@@ -131,9 +131,9 @@ class SignupContainer extends Component {
               type="text"
               value={this.state.password}
               onChange={e => {
-                this.onFeildpsdChange(e);
+                this.onFieldpsdChange(e);
               }}
-              Name="passwd"
+              name="passwd"
             />
           </label>
           <br />
@@ -149,5 +149,3 @@ class SignupContainer extends Component {
     );
   }
 }
-
-export default SignupContainer;

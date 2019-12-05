@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar.jsx";
+import NavBarContainer from "./NavBarContainer.jsx";
 import ApiContainer from "./ApiContainer.jsx";
 
 function App(props) {
   return (
     <div>
-      <NavBar />
+      <NavBarContainer />
       <ApiContainer />
     </div>
   );

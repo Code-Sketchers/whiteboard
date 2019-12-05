@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 const path = require("path");
 
-class LoginContainer extends Component {
+
+export default class LoginContainer extends Component {
   constructor() {
     super();
     this.onLoginSubmit = this.onLoginSubmit.bind(this);
@@ -111,5 +112,3 @@ class LoginContainer extends Component {
     );
   }
 }
-
-export default LoginContainer;
