@@ -17,7 +17,7 @@ export default class ToolBar extends Component {
     this.butts = [];
     this.createButts();
   }
-
+  // Todo: See a way to do without react-bootstrap;
   createButts() {
     this.props.tools.map(tool => {
       this.butts.push(( <Button 
@@ -32,7 +32,6 @@ export default class ToolBar extends Component {
 
     return (
       <div style={this.styles}>
-        {/* <h2 style={this.styles}>Hello ToolBar!</h2> */}
         {this.butts}
       </div>
     );

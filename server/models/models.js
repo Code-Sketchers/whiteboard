@@ -27,6 +27,7 @@ password: {type: String, required: true}
 
 const User = mongoose.model('users', userSchema);
 
+// Todo: research how to grab the objects in the stage;
 const userTemplateSchema = new Schema({
 userId: {type: String, required: true},
 arrayOfTemplates: {type: String}

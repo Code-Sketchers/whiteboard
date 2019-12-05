@@ -33,6 +33,7 @@ class LoginContainer extends Component {
       },
       body: JSON.stringify(this.state), // body data type must match "Content-Type" header
     })
+    // Todo: Authenticate;
       .then(() => {
         this.setState({
           email: '',

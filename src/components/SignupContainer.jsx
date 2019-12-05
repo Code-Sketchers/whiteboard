@@ -9,6 +9,7 @@ class SignupContainer extends Component {
       email: '',
       password: ''
     }
+
     this.onSignupSubmit = this.onSignupSubmit.bind(this);
   }
 
@@ -18,6 +19,7 @@ class SignupContainer extends Component {
     e.preventDefault();
 
     //set stating 
+    // Todo: We do not want to save the password as plain text in the state;
     this.setState({
       firstName: e.target.value,
       lastName: e.target.value,
@@ -25,25 +27,20 @@ class SignupContainer extends Component {
       password: e.target.value
     });
 
+
+    // Todo: Build authentication for users' signup
     //create url variable to hold server signup[ address
     const url = 'http://localhost:4000/signup';
      // submit what is currently in state entry
      console.log("sending req")
      fetch(url, {
       method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      redirect: 'follow', // manual, *follow, error
-      referrer: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(this.state), // body data type must match "Content-Type" header
     })
-      // .then((res) => res.json())
-      // .then((data) => console.log('email, pass, first and last Name successfully sent!!'))
+
       .then(() => {
         this.setState({
           firstName: '',
@@ -51,25 +48,11 @@ class SignupContainer extends Component {
           email: '',
           password: ''
         });
+        // Todo: this redirect to the api after signup;
         window.location.href = 'http://localhost:3000/api'
       })
       .catch((err) => console.log('Failed to fetch', err));
 
-
-    //log email and passwrd submit to console - confirm state has been updated with proper data
-    // console.log('The current state of firstName is: ', this.state.firstName);
-    // console.log('The current state of lastName is: ', this.state.lastName);
-    // console.log('The current state of email is: ', this.state.email);
-    // console.log('The current state of pswd is: ', this.state.password);
-    
-
-    //reset the state of the page to be an empty string 
-    // this.setState({
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   password: ''
-    // });
   }
 
   //on firstName feild change upstate state
@@ -98,6 +81,7 @@ class SignupContainer extends Component {
       password: e.target.value
     });
   };
+
 
   //redirect to sign up page
   loginupBtn () {

@@ -14,18 +14,16 @@ userController.signup = (req, res, next) => {
   // console.log(req.body);
   console.log("start signup")
   // console.log(req.body);
-
+  // Todo: Where bcrypt should be placed;
   const { firstName, lastName, email, password } = req.body;
   //bcrypt functionality to turn the password to a hash
+  // Todo: check the number rounds appropriate for the hashing;
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(password, salt, (err, hash) => {
       if (err) return next(err);
 
       User.create({firstName: firstName, lastName: lastName, email: email, password: hash}, (err, user) => {
         if (err) return next(err);
-        // const userIdToAssign = User.find({email: email}, '_id');
-        // console.log("************************************************", userIdToAssign)
-        // res.locals.userId = userIdToAssign;
         console.log("user created")
         return next(); 
       })
@@ -81,6 +79,6 @@ userController.getUsers = (req,res, next) => {
 
 
 
-// a mongoose middleware for a doc in the tempates table when the user signs up
+// a mongoose middleware for a doc in the templates table when the user signs up
 
 module.exports = userController;
