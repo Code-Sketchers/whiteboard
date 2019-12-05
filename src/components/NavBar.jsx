@@ -7,7 +7,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <div style={this.styles}>
+      <div className="container-inner">
         <h2>I AM THE NAV BAR</h2>
         <button>SIGN IN</button>
         <button>SIGN UP</button>

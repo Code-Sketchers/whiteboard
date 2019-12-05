@@ -8,11 +8,6 @@ const cors = require("cors");
 const app = express();
 const session = require("express-session");
 
-//allows cors errors to be bypassed
-// Todo: Not sure about cors yet;
-//?
-//*
-//!
 app.use(cors());
 
 //body parser to allow req body post from front end

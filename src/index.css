@@ -63,7 +63,7 @@ h4 {
 }
 
 .container-outer {
-  width: 30%;
+  width: 50%;
   padding: 10px;
   margin: 20px auto 10px;
   /* background color 5 */
@@ -151,10 +151,10 @@ td {
   text-align: left;
 }
 
-
 /* Button (General Use) */
 
 button {
+  margin: 0 10px;
   background-color: #5c6a79;
   color: white;
   padding: 1px 10px;
@@ -216,4 +216,3 @@ button {
   /* background color 4 */
   background-color: #5c6a79;
 }
-

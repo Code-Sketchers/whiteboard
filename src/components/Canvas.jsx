@@ -71,12 +71,17 @@ export default class CanvasContainer extends Component {
   // Todo: reduce the innerwidth to allow space for the toolbar;
   render() {
     return (
-      <h2>I AM THE CANVAS CONTAINER</h2>
-      // <Stage width={window.innerWidth} height={window.innerHeight} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
-      //   <Layer>
-      //     {this.state.arr}
-      //   </Layer>
-      // </Stage>
+      <div className="container-inner">
+        <h2>I AM THE CANVAS CONTAINER</h2>
+        <Stage
+          width={window.innerWidth}
+          height={window.innerHeight}
+          onMouseDown={this.handleMouseDown}
+          onMouseUp={this.handleMouseUp}
+        >
+          <Layer>{this.state.arr}</Layer>
+        </Stage>
+      </div>
     );
   }
 }
