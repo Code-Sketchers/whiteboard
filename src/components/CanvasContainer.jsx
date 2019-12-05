@@ -8,9 +8,11 @@ export default class CanvasContainer extends Component {
       mStart: { x: 0, y: 0 },
       arr: [],
     }
+    this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleMouseDown = this.handleMouseDown.bind(this);
   }
 
-  handleMouseUp = e => {
+  handleMouseUp(e) {
     console.log(e)
     //switch for props.curTool
     if (this.props.curTool !== 'ARROW') {
@@ -43,7 +45,7 @@ export default class CanvasContainer extends Component {
     }
   };
 
-  handleMouseDown = e => {
+  handleMouseDown(e) {
     if (this.props.curTool !== 'ARROW') {
       e.target.stopDrag();
     }

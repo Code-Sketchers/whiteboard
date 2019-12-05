@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ToolBar from './ToolBar';
-import CanvasContainer from './CanvasContainer';
+import ToolBar from './ToolBar.jsx';
+import CanvasContainer from './CanvasContainer.jsx';
 
 
 class ApiContainer extends Component {
