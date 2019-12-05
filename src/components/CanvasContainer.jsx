@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Stage, Group, Layer, Rect, Line } from 'react-konva';
 
+
 export default class CanvasContainer extends Component {
   constructor(props) {
     super(props);
@@ -11,41 +12,50 @@ export default class CanvasContainer extends Component {
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
   }
+  
 
   handleMouseUp(e) {
-    console.log(e)
+    // console.log(this.props)
     //switch for props.curTool
-    if (this.props.curTool !== 'ARROW') {
+    // if (this.props.curTool !== 'ARROW') {
       switch (this.props.curTool) {
         case 'RECT':
           this.setState({
-            arr: [...this.state.arr, (<Group draggable><Rect
-              key={this.state.arr.length}
+            arr: [...this.state.arr, (<Rect
+              key={'Rect' + this.state.arr.length}
               x={this.state.mStart.x}
               y={this.state.mStart.y}
               width={Math.abs(e.evt.clientX - this.state.mStart.x)}
               height={Math.abs(e.evt.clientY - this.state.mStart.y - this.props.tbh)}
-              stroke='black'
+              stroke={this.props.curBorderColor}
+              strokeWidth={parseInt(this.props.strokeWidth)}
+              fill={this.props.curFillColor}
               draggable
-            /></Group>)]
+            />)]
           });
           break;
         case 'LINE':
           this.setState({
             arr: [...this.state.arr, (<Line
-              key={this.state.arr.length}
+              key={'Line' + this.state.arr.length}
               points={[this.state.mStart.x, this.state.mStart.y, e.evt.clientX, e.evt.clientY - this.props.tbh]}
-              stroke='black'
+              stroke={this.props.curBorderColor}
+              strokeWidth={parseInt(this.props.strokeWidth)}
+              hitStrokeWidth={parseInt(this.props.strokeWidth) + 10}
+              draggable
             />)]
           });
           break;
         default:
           break;
       }
-    }
+    // }
   };
 
+  // on mouseDown, capture current mouse coordinates in state
+  // also ensures that user cannot drag and draw at the same time
   handleMouseDown(e) {
+    console.log(e)
     if (this.props.curTool !== 'ARROW') {
       e.target.stopDrag();
     }
