@@ -63,7 +63,7 @@ h4 {
 }
 
 .container-outer {
-  width: 50%;
+  width: 60%;
   padding: 10px;
   margin: 20px auto 10px;
   /* background color 5 */
@@ -72,8 +72,8 @@ h4 {
 }
 
 .container-inner {
-  width: 85%;
-  margin: 10px auto 5px;
+  width: 98%;
+  margin: 0 auto 5px;
   /* background color 2 */
   background-color: #3c4a59;
   padding: 10px;
@@ -96,7 +96,9 @@ li {
 }
 
 li button {
-  background-color: green;
+  width: 100px;
+  height: 35px;
+  font-size: 1.25em;
 }
 
 /* li a {

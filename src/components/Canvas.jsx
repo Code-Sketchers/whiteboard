@@ -74,7 +74,7 @@ export default class Canvas extends Component {
       <div className="container-inner">
         <h2>I AM THE CANVAS CONTAINER</h2>
         <Stage
-          width={window.innerWidth}
+          width={1000}
           height={window.innerHeight}
           onMouseDown={this.handleMouseDown}
           onMouseUp={this.handleMouseUp}
