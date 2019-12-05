@@ -11,19 +11,21 @@ import {
 
 function App(props) {
   return (
-    <Router>
-      <Switch>
-        <Route path="/signup">
-          <SignupContainer />
-        </Route>
-        <Route path="/api">
-          <ApiContainer />
-        </Route>
-        <Route path="/">
-          <LoginContainer />
-        </Route>
-      </Switch>
-    </Router>
+    // <LoginContainer />
+    <ApiContainer />
+    // <Router>
+    //   <Switch>
+    //     <Route path="/signup">
+          // <SignupContainer />
+    //     </Route>
+    //     {/* <Route path="/api">
+    //       <ApiContainer />
+    //     </Route> */}
+    //     <Route path="/">
+    //       <ApiContainer />
+    //     </Route>
+    //   </Switch>
+    // </Router>
   )
 }
 

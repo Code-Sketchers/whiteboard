@@ -30,7 +30,7 @@ class SignupContainer extends Component {
 
     // Todo: Build authentication for users' signup
     //create url variable to hold server signup[ address
-    const url = 'http://localhost:4000/signup';
+    const url = window.location.hostname + '/signup';
      // submit what is currently in state entry
      console.log("sending req")
      fetch(url, {
@@ -49,7 +49,7 @@ class SignupContainer extends Component {
           password: ''
         });
         // Todo: this redirect to the api after signup;
-        window.location.href = 'http://localhost:3000/api'
+        window.location.href = window.location.hostname + '/api';
       })
       .catch((err) => console.log('Failed to fetch', err));
 
@@ -85,7 +85,7 @@ class SignupContainer extends Component {
 
   //redirect to sign up page
   loginupBtn () {
-    window.location.href = 'http://localhost:3000/login'
+    window.location.href = window.location.hostname + '/login';
   }
 
   render() {

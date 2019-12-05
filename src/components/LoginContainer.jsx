@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const path = require('path');
 
 class LoginContainer extends Component {
   constructor () {
@@ -22,7 +23,7 @@ class LoginContainer extends Component {
     });
 
     //create url variable to hold server signup address
-    const url = 'http://localhost:4000/login';
+    const url = path.resolve(__dirname, '/login');
      // submit what is currently in state entry
      fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -39,7 +40,7 @@ class LoginContainer extends Component {
           email: '',
           password: ''
         });
-        window.location.href = 'http://localhost:3000/api'
+        window.location.href = path.resolve(__dirname, '/api');
       })
       .catch((err) => console.log('Failed to fetch', err));
 
@@ -69,7 +70,7 @@ class LoginContainer extends Component {
 
   //redirect to sign up page
   siginupBtn () {
-    window.location.href = 'http://localhost:3000/signup'
+    window.location.href = path.resolve(__dirname, '/signup');
   }
   
   render() {

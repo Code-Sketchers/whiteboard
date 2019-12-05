@@ -7,7 +7,7 @@ class ApiContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      curTool: 'ARROW',
+      curTool: 'LINE',
       tools: ['ARROW', 'LINE', 'RECT'],
     }
     this.toolBarHeight = 30;
