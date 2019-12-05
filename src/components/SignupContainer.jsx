@@ -30,11 +30,12 @@ class SignupContainer extends Component {
 
     // Todo: Build authentication for users' signup
     //create url variable to hold server signup[ address
-    const url = window.location.hostname + '/signup';
+    // const url = window.location.hostname + '/signup';
+    const url = '/signup';
      // submit what is currently in state entry
      console.log("sending req")
      fetch(url, {
-      method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json',
       },
@@ -49,8 +50,9 @@ class SignupContainer extends Component {
           password: ''
         });
         // Todo: this redirect to the api after signup;
-        window.location.href = window.location.hostname + '/api';
+        // window.location.href = window.location.hostname + '/api';
       })
+      .then((res) => alert("Your profile was created successfully!"))
       .catch((err) => console.log('Failed to fetch', err));
 
   }
@@ -85,7 +87,8 @@ class SignupContainer extends Component {
 
   //redirect to sign up page
   loginupBtn () {
-    window.location.href = window.location.hostname + '/login';
+    window.location.href = '/login'
+    // window.location.href = window.location.hostname + '/login';
   }
 
   render() {

@@ -21,7 +21,7 @@
   "scripts": {
     "start": "node server/server.js",
     "build": "webpack",
-    "dev": "webpack-dev-server --open & node server/server.js"
+    "dev": "webpack-dev-server --open & nodemon server/server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",

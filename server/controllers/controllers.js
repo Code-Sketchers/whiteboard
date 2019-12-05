@@ -30,6 +30,8 @@ userController.signup = (req, res, next) => {
     })
   })
   
+  // mongodb+srv://rexosariemen:654321abcdef@cluster0-hjjmn.mongodb.net/test?retryWrites=true&w=majority
+  // {654321abcdef}
   //the next middleware will handle the creation of the cookies
   //after that, another middleware will create the entry for that user in the templates collection
 }
@@ -42,13 +44,15 @@ userController.createTemplate = (req, res, next) => {
 }
 
 userController.login = (req, res, next) => {
-  if (req.session) return next();
+  // if (req.session) return next(); // We will review whether we need this session;
   const {password, email} = req.body;
-  User.find({email: email}, 'password', (err, hashDoc) => {
-    bcrypt.compare(password, hashDoc, (err, result) => {
-      if (!result) return alert("This password and email combination do not exist in our database.");
+  User.find({email: email}, {_id: 0, password: 1}, (err, hashDoc) => {
+    bcrypt.compare(password, hashDoc[0].password, (err, result) => {
+      if (!result) console.log("This password and email combination do not exist in our database.");
       if (err) return next(err);
-      else if (result === "true") return next();
+      else if (result == true) {
+        return next();
+      }
     });
   });
 }
