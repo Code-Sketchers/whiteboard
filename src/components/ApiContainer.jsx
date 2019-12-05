@@ -11,10 +11,10 @@ class ApiContainer extends Component {
       tools: ['ARROW', 'LINE', 'RECT'],
     }
     this.toolBarHeight = 30;
-    this.aFunc = this.aFunc.bind(this);
+    this.changeTool = this.changeTool.bind(this);
   }
 
-  aFunc(str) {
+  changeTool(str) {
     this.setState({
       curTool: str,
     })
@@ -24,7 +24,7 @@ class ApiContainer extends Component {
 
     return (
       <div className="apiCon">
-        <ToolBar func={this.aFunc} tools={this.state.tools} tbh={this.toolBarHeight}/>
+        <ToolBar func={this.changeTool} tools={this.state.tools} tbh={this.toolBarHeight}/>
         <CanvasContainer curTool={this.state.curTool} tbh={this.toolBarHeight}/>
       </div>
     );

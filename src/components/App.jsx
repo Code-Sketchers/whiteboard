@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import LoginContainer from './LoginContainer.jsx';
-import SignupContainer from './SignupContainer.jsx';
-import ApiContainer from './ApiContainer.jsx';
+import React, { Component } from "react";
+import LoginContainer from "./LoginContainer.jsx";
+import SignupContainer from "./SignupContainer.jsx";
+import ApiContainer from "./ApiContainer.jsx";
+// import '../index.css';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App(props) {
   return (
@@ -16,7 +13,7 @@ function App(props) {
     // <Router>
     //   <Switch>
     //     <Route path="/signup">
-          // <SignupContainer />
+    // <SignupContainer />
     //     </Route>
     //     {/* <Route path="/api">
     //       <ApiContainer />
@@ -26,7 +23,7 @@ function App(props) {
     //     </Route>
     //   </Switch>
     // </Router>
-  )
+  );
 }
 
 export default App;

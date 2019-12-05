@@ -1,103 +1,115 @@
-import React, { Component } from 'react';
-const path = require('path');
+import React, { Component } from "react";
+const path = require("path");
 
 class LoginContainer extends Component {
-  constructor () {
-    super() 
+  constructor() {
+    super();
     this.onLoginSubmit = this.onLoginSubmit.bind(this);
     this.state = {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: ""
+    };
   }
 
   //on button click functionality to update state
-  onLoginSubmit (e) {
+  onLoginSubmit(e) {
     //prevents default reload
     e.preventDefault();
 
-    //set stating 
+    //set stating
     this.setState({
       email: e.target.value,
       password: e.target.value
     });
 
     //create url variable to hold server signup address
-    const url = path.resolve(__dirname, '/login');
-     // submit what is currently in state entry
-     fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-     
+    const url = path.resolve(__dirname, "/login");
+    // submit what is currently in state entry
+    fetch(url, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json"
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify(this.state), // body data type must match "Content-Type" header
+      body: JSON.stringify(this.state) // body data type must match "Content-Type" header
     })
-    // Todo: Authenticate;
+      // Todo: Authenticate;
       .then(() => {
         this.setState({
-          email: '',
-          password: ''
+          email: "",
+          password: ""
         });
-        window.location.href = path.resolve(__dirname, '/api');
+        window.location.href = path.resolve(__dirname, "/api");
       })
-      .catch((err) => console.log('Failed to fetch', err));
-
+      .catch(err => console.log("Failed to fetch", err));
 
     //log email and passwrd submit to console
-    console.log('The current state of email is: ', this.state.email);
-    console.log('The current state of pswd is: ', this.state.password);
-    
+    console.log("The current state of email is: ", this.state.email);
+    console.log("The current state of pswd is: ", this.state.password);
 
-    //reset the state of the page to be an empty string 
-    
+    //reset the state of the page to be an empty string
   }
 
-  //on user feild change upstate state
-  onFeildusrChange (e) {
+  //on user Field change upstate state
+  onFieldusrChange(e) {
     this.setState({
-      email: e.target.value,
+      email: e.target.value
     });
-  };
+  }
 
-  //on psd feild change upstate state
-  onFeildpsdChange (e) {
+  //on psd Field change upstate state
+  onFieldpsdChange(e) {
     this.setState({
       password: e.target.value
     });
-  };
+  }
 
   //redirect to sign up page
-  siginupBtn () {
-    window.location.href = path.resolve(__dirname, '/signup');
+  siginupBtn() {
+    window.location.href = path.resolve(__dirname, "/signup");
   }
-  
+
   render() {
     return (
       <div>
-        <h1>
-          Login Page
-        </h1>
+        <h1>Login Page</h1>
         <form>
-            <label>
-              Email:
-              <input type="email" value={this.state.email} onChange={(e)=> {this.onFeildusrChange(e)}}  name="name" />
-            </label>
-            <br/>
-            <label>
-               Password:
-              <input type="password" value={this.state.password} onChange={(e)=> {this.onFeildpsdChange(e)}}  name="passwd" />
-            </label>
-            <br/>
-          <input type="submit" value="Submit" onClick={(e) => this.onLoginSubmit(e)}/>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={this.state.email}
+              onChange={e => {
+                this.onFieldusrChange(e);
+              }}
+              name="name"
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={e => {
+                this.onFieldpsdChange(e);
+              }}
+              name="passwd"
+            />
+          </label>
+          <br />
+          <input
+            type="submit"
+            value="Submit"
+            onClick={e => this.onLoginSubmit(e)}
+          />
         </form>
         Click here to sign up:
-        <button onClick={()=> this.siginupBtn()}>Sign up</button>
+        <button onClick={() => this.siginupBtn()}>Sign up</button>
       </div>
     );
   }
 }
-
 
 export default LoginContainer;
