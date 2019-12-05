@@ -91,15 +91,15 @@ ul {
   background-color: rgb(9, 14, 19);
 }
 
-button ul li {
-  background-color: green;
-}
-
 li {
   float: right;
 }
 
-li a {
+li button {
+  background-color: green;
+}
+
+/* li a {
   display: block;
   color: white;
   text-align: center;
@@ -109,7 +109,7 @@ li a {
 
 li a:hover {
   background-color: #111;
-}
+} */
 
 /* Table */
 
