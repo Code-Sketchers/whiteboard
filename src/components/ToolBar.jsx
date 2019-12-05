@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Button from 'react-bootstrap/Button';
 
 export default class ToolBar extends Component {
   constructor(props) {
@@ -11,28 +10,26 @@ export default class ToolBar extends Component {
       margin: 0,
       padding: 0,
       display: 'flex',
-
     }
 
-    this.butts = [];
-    // this.createButts();
+    this.btns = [];
+    this.createBtns();
   }
-  // Todo: See a way to do without react-bootstrap;
-  // createButts() {
-  //   this.props.tools.map(tool => {
-  //     this.butts.push(( <Button 
-  //       key={this.butts.length}
-  //       style={this.styles}
-  //       onClick={() => this.props.func(tool)}
-  //       >{tool}</Button>));
-  //   })
-  // }
+
+  createBtns() {
+    this.props.tools.map(tool => {
+      this.btns.push(( <button 
+        key={this.btns.length}
+        onClick={() => this.props.func(tool)}
+        >{tool}</button>));
+    })
+  }
 
   render() {
 
     return (
       <div style={this.styles}>
-        {this.butts}
+        {this.btns}
       </div>
     );
   }
