@@ -8,7 +8,6 @@ export default class ToolBar extends Component {
   render() {
     return (
       <div className="container-inner">
-        <h2>I AM THE TOOL BAR</h2>
         <button>SELECT</button>
         <button>DRAW RECTANGLE</button>
         <button>DRAW LINE</button>

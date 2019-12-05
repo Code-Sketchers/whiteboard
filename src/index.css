@@ -80,51 +80,38 @@ h4 {
   border-radius: 5px;
 }
 
-/* Lists: */
+/* Navbar */
 
 ul {
-  width: 80%;
-  border-radius: 5px;
-  /* background color 11 */
-  background-color: #c5d3e2;
-  padding: 10px;
-  margin: 10px auto;
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  /* border: 20px; */
+  padding: 15px;
+  overflow: hidden;
+  background-color: rgb(9, 14, 19);
+}
+
+button ul li {
+  background-color: green;
 }
 
 li {
-  font-size: 1.2em;
-  font-weight: 600;
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
   text-align: center;
-  margin: 5px;
-  /* color 0 */
-  color: #1c2a39;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-/* Tables: */
-
-/* table {
-  width: 50%;
-  background-color: white;
-  border-collapse: collapse;
-  width: 100%;
-  padding: 20px;
+li a:hover {
+  background-color: #111;
 }
 
-th {
-  font-weight: 500;
-  text-align: left;
-  padding: 4px;
-}
-
-td {
-  text-align: left;
-  padding: 4px;
-}
-
-tr:nth-child(even) {
-  background-color:  #C5D3E2;
-} */
+/* Table */
 
 table {
   padding: 10px;
