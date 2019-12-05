@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ToolBar from './ToolBar.jsx';
-import CanvasContainer from './Canvas.jsx';
+import Canvas from './Canvas.jsx';
 
 
 class ApiContainer extends Component {
@@ -25,7 +25,7 @@ class ApiContainer extends Component {
     return (
       <div className="apiCon">
         <ToolBar func={this.changeTool} tools={this.state.tools} tbh={this.toolBarHeight}/>
-        <CanvasContainer curTool={this.state.curTool} tbh={this.toolBarHeight}/>
+        <Canvas curTool={this.state.curTool} tbh={this.toolBarHeight}/>
       </div>
     );
   }

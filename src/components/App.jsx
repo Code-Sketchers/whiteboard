@@ -7,7 +7,7 @@ import SignupPopup from "./SignupPopup.jsx";
 
 function App(props) {
   return (
-    <div className="container-outer">
+    <div>
       <h1>I AM THE APP</h1>
       <NavBar />
       <ToolBar />

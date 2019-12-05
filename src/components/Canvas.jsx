@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Stage, Group, Layer, Rect, Line } from "react-konva";
 
-export default class CanvasContainer extends Component {
+export default class Canvas extends Component {
   constructor(props) {
     super(props);
     this.state = {
