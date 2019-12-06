@@ -207,6 +207,20 @@ button {
 }
 
 /* Popup */
+
+.fullscreen-container {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  /* display: none; */
+}
+
 .popup {
   position: fixed;
   width: 100%;
@@ -221,11 +235,26 @@ button {
 .popup_inner {
   position: absolute;
   width: 350px;
-  height: 300px;
+  height: 350px;
   left: 30%;
   right: 30%;
   top: 30%;
   bottom: 30%;
   margin: auto;
   background: #2c3a49;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-size: 0.9em;
+  margin: 0 10px;
+  background-color: #5c6a79;
+  color: white;
+  padding: 1px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  border-radius: 5px;
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 const path = require("path");
 
-
 export default class LoginContainer extends Component {
   constructor() {
     super();
@@ -73,41 +72,53 @@ export default class LoginContainer extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Login Page</h1>
-        <form>
-          <label>
-            Email:
-            <input
-              type="email"
-              value={this.state.email}
-              onChange={e => {
-                this.onFieldusrChange(e);
-              }}
-              name="name"
-            />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={e => {
-                this.onFieldpsdChange(e);
-              }}
-              name="passwd"
-            />
-          </label>
-          <br />
-          <input
-            type="submit"
-            value="Submit"
-            onClick={e => this.onLoginSubmit(e)}
-          />
-        </form>
-        Click here to sign up:
-        <button onClick={() => this.siginupBtn()}>Sign up</button>
+      <div className="fullscreen-container">
+        <div className="popup">
+          <div className="popup_inner">
+            <div className="spacer10"></div>
+            <h1>LOG IN</h1>
+            <form>
+              <label>
+                Email:
+                <input
+                  type="email"
+                  value={this.state.email}
+                  onChange={e => {
+                    this.onFieldusrChange(e);
+                  }}
+                  name="name"
+                />
+              </label>
+              <br />
+              <label>
+                Password:
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={e => {
+                    this.onFieldpsdChange(e);
+                  }}
+                  name="passwd"
+                />
+              </label>
+              <div className="spacer10"></div>
+              <input
+                type="submit"
+                value="Submit"
+                onClick={e => this.onLoginSubmit(e)}
+              />
+            </form>
+            <div className="spacer10"></div>
+            Not registered yet? Click here to sign up:
+            <br/>
+            <button onClick={() => this.siginupBtn()}>Sign up</button>
+            <div className="spacer10"></div>
+            <div className="spacer10"></div>
+            <div className="spacer10"></div>
+            <div className="spacer10"></div>
+            <button onClick={this.props.closeLogInContainer}>Cancel</button>
+          </div>
+        </div>
       </div>
     );
   }
