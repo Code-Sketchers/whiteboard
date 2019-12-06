@@ -63,11 +63,11 @@ h4 {
 }
 
 .container-outer {
-  width: 60%;
+  width: 85%;
   padding: 10px;
   margin: 20px auto 10px;
   /* background color 5 */
-  background-color: #6c7a89;
+  background-color: white;
   border-radius: 5px;
 }
 
@@ -257,4 +257,14 @@ input[type="reset"] {
   display: inline-block;
   font-family: "Oswald", sans-serif;
   border-radius: 5px;
+}
+
+#undo_button {
+  position: absolute;
+  top: 50px;
+}
+
+#redo_button {
+  position: absolute;
+  top: 50px;
 }
