@@ -42,8 +42,9 @@ class LoginContainer extends Component {
         });
         // window.location.href = path.resolve(__dirname, '/api');
       })
-      .then(() => alert('You have successfully logged in!'))
-      .catch((err) => console.log('Failed to fetch', err));
+      // .then(() => alert('You have successfully logged in!'))
+      .catch((err) => alert('Failed to fetch', err));
+
 
 
     //log email and passwrd submit to console

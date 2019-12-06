@@ -17,12 +17,12 @@ function App(props) {
     <Router>
       <Switch>
         <Route path="/">
-          <LoginContainer />
+          <LoginContainer/>
         </Route>
         {/* <Route path="/api">
           <ApiContainer />
         </Route> */}
-        <Route path="/">
+        <Route path="/api">
           <ApiContainer />
         </Route>
       </Switch>

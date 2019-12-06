@@ -50,11 +50,14 @@ res.send('heloo');
 
 //recieving state userdata from front end at login
 app.post('/login', userController.login, (req, res) => {
+  res.send();
     console.log('login entry middleware is functioning');
-    self.location = 'http://google.com';
+    // Todo: Need to remove the alert, you have successfully logged in
+    // todo: because it is alerting the client with wrong login credentials
+    //  self.location = 'http://google.com';
     // window.location.assign('http://google.com');
     //sucessful post request status
-    res.status(200).send();
+    // res.sendFile(path.resolve(__dirname, '../public/serveme.html'));
 });
 
 // catch-all route handler for any requests to an unknown route

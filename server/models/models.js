@@ -1,7 +1,7 @@
 // user and usersettings - mapped to the object id of each user
 
 const mongoose = require('mongoose');
-const MONGO_URI = 'mongodb+srv://rexosariemen:654321abcdef@cluster0-hjjmn.mongodb.net/test?retryWrites=true&w=majority'
+const MONGO_URI = 'mongodb+srv://rexosariemen:654321abcdef@cluster0-hjjmn.mongodb.net/test?retryWrites=true&w=majority';
 
 
 mongoose
