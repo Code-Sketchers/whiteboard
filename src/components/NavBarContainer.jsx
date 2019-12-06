@@ -22,7 +22,16 @@ export default class NavBarContainer extends Component {
     console.log("Sign Up Button Clicked....", this.state);
   }
 
+  closeSignUpContainer() {
+    console.log("Close Button Clicked....", this.state);
+    this.setState({
+      thingToDisplay: "navbar"
+    });
+  }
+
   render() {
+    let showSignupContainer = false;
+
     return (
       <div>
         <NavBar
@@ -30,7 +39,11 @@ export default class NavBarContainer extends Component {
           logSignUpClick={this.logSignUpClick}
         />
         <LoginContainer />
-        <SignupContainer />
+        {this.state.thingToDisplay === "signup" ? (
+          <SignupContainer
+            closeSignUpContainer={this.closeSignUpContainer.bind(this)}
+          />
+        ) : null}
       </div>
     );
   }

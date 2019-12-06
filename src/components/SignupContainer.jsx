@@ -85,66 +85,72 @@ export default class SignupContainer extends Component {
   }
 
   render() {
+    console.log("Props: ", this.props.closeSignUpContainer);
     return (
-      <div>
-        <h1>Signup Page</h1>
-        <form>
-          <label>
-            First Name:
+      <div className="popup">
+        <div className="popup_inner">
+        <div className="spacer10"></div>
+          <h1>SIGN UP</h1>
+          <form>
+            <label>
+              First Name:
+              <input
+                type="text"
+                value={this.state.firstName}
+                onChange={e => {
+                  this.onFieldfnChange(e);
+                }}
+                name="firstName"
+              />
+            </label>
+            <br />
+            <label>
+              Last Name:
+              <input
+                type="text"
+                value={this.state.lastName}
+                onChange={e => {
+                  this.onFieldlastNameChange(e);
+                }}
+                name="lastName"
+              />
+            </label>
+            <br />
+            <label>
+              Email:
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={e => {
+                  this.onFieldusrChange(e);
+                }}
+                name="email"
+              />
+            </label>
+            <br />
+            <label>
+              Password:
+              <input
+                type="text"
+                value={this.state.password}
+                onChange={e => {
+                  this.onFieldpsdChange(e);
+                }}
+                name="passwd"
+              />
+            </label>
+            <br />
             <input
-              type="text"
-              value={this.state.firstName}
-              onChange={e => {
-                this.onFieldfnChange(e);
-              }}
-              name="firstName"
+              type="submit"
+              value="Submit"
+              onClick={e => this.onSignupSubmit(e)}
             />
-          </label>
-          <br />
-          <label>
-            Last Name:
-            <input
-              type="text"
-              value={this.state.lastName}
-              onChange={e => {
-                this.onFieldlastNameChange(e);
-              }}
-              name="lastName"
-            />
-          </label>
-          <br />
-          <label>
-            Email:
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={e => {
-                this.onFieldusrChange(e);
-              }}
-              name="email"
-            />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input
-              type="text"
-              value={this.state.password}
-              onChange={e => {
-                this.onFieldpsdChange(e);
-              }}
-              name="passwd"
-            />
-          </label>
-          <br />
-          <input
-            type="submit"
-            value="Submit"
-            onClick={e => this.onSignupSubmit(e)}
-          />
-        </form>
-        Aleady have an account? Log in here:
-        <button onClick={() => this.loginupBtn()}>log in</button>
+          </form>
+          Aleady have an account? Log in here:
+          <button onClick={() => this.loginupBtn()}>log in</button>
+          <div className="spacer10"></div>
+          <button onClick={this.props.closeSignUpContainer}>Cancel</button>
+        </div>
       </div>
     );
   }

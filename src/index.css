@@ -220,10 +220,12 @@ button {
 }
 .popup_inner {
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
+  width: 350px;
+  height: 300px;
+  left: 30%;
+  right: 30%;
+  top: 30%;
+  bottom: 30%;
   margin: auto;
-  background: white;
+  background: #2c3a49;
 }
