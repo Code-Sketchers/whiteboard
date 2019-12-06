@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import LoginContainer from "./LoginContainer.jsx";
-import LoginContainer from "./LoginContainer_temp.jsx";
+import LoginContainer from "./LoginContainer.jsx";
 import SignupContainer from "./SignupContainer.jsx";
 import NavBar from "./NavBar";
 
@@ -37,8 +36,6 @@ export default class NavBarContainer extends Component {
   }
 
   render() {
-    let showSignupContainer = false;
-
     return (
       <div>
         <NavBar
