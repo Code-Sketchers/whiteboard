@@ -12,6 +12,7 @@ class ApiContainer extends Component {
     }
     this.toolBarHeight = 30;
     this.aFunc = this.aFunc.bind(this);
+    
   }
 
   aFunc(str) {

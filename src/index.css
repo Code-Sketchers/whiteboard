@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#undo_button {
+  position: absolute;
+  top: 50px;
+}
+
+#redo_button {
+  position: absolute;
+  top: 50px;
+}
