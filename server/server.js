@@ -50,7 +50,7 @@ res.send('heloo');
 
 //recieving state userdata from front end at login
 app.post('/login', userController.login, (req, res) => {
-  res.send();
+  res.json(res.locals.message);
     console.log('login entry middleware is functioning');
     // Todo: Need to remove the alert, you have successfully logged in
     // todo: because it is alerting the client with wrong login credentials

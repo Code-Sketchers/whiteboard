@@ -50,17 +50,19 @@ userController.login = (req, res, next) => {
     if (err) {
       return next(err);
     } else if (hashDoc.length === 0) {
-      const errObj = {
-        error: 'No such user exist in database',
-      };
+      // const errObj = {
+      //   error: 'No such user exist in database',
+      // };
+      res.locals.message = 'No such user exists in the database.';
       console.log('non-existent user!');
-      return next(errObj);
+      return next();
     };
 
     bcrypt.compare(password, hashDoc[0].password, (err, result) => {
       // if (!result) console.log("This password or/and email combination do not exist in our database.");
       // if (err) return next(err);
       if (result == true) {
+        res.locals.message = 'User is logged in.';
         return next();
       }
     });
